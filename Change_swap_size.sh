@@ -9,9 +9,12 @@ read -p "是否需要更改虚拟内存大小？(y/n): " response
 
 # 根据用户输入执行相应操作
 if [[ $response == "y" ]]; then
-    read -p "请输入新的虚拟内存大小（如1G, 2G等）: " new_swap_size
+    read -p "请输入新的虚拟内存大小（如如300M, 2G等等）: " new_swap_size
     # 禁用交换空间
     sudo swapoff /swapfile
+    # 删除原先虚拟内存文件
+    sudo rm /swapfile
+    # 新建指定虚拟内存大小
     sudo fallocate -l "$new_swap_size" /swapfile
     sudo chmod 600 /swapfile
     sudo mkswap /swapfile
