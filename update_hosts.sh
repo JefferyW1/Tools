@@ -12,7 +12,16 @@ if [ -z "$ip_address" ]; then
   exit 1
 fi
 
-# 使用sed在第一行插入新的IP地址和对应的主机名
-sudo sed -i "1s/^/$ip_address    www.gstatic.com\n/" /etc/hosts
+# 临时文件，用于存储新的 hosts 文件内容
+temp_file=$(mktemp)
+
+# 在临时文件中插入新的IP地址和对应的主机名
+echo "$ip_address    www.gstatic.com" | cat - /etc/hosts > "$temp_file"
+
+# 将临时文件内容覆盖到 /etc/hosts 文件
+sudo cp "$temp_file" /etc/hosts
+
+# 删除临时文件
+rm "$temp_file"
 
 echo "成功将 $ip_address 添加到 /etc/hosts 文件的第一行。"
