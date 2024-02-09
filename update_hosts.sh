@@ -12,7 +12,7 @@ if [ -z "$ip_address" ]; then
   exit 1
 fi
 
-# 添加IP地址和对应的主机名到hosts文件的最上层位置
-echo "$ip_address    www.gstatic.com" | sudo tee -a /etc/hosts > /dev/null
+# 使用sed在第一行插入新的IP地址和对应的主机名
+sudo sed -i "1s/^/$ip_address    www.gstatic.com\n/" /etc/hosts
 
-echo "成功将 $ip_address 添加到 /etc/hosts 文件的最上层位置。"
+echo "成功将 $ip_address 添加到 /etc/hosts 文件的第一行。"
