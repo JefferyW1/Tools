@@ -19,7 +19,7 @@ temp_file=$(mktemp)
 new_line="$ip_address    www.gstatic.com"
 
 # 检查是否已存在相同的行，如果存在则删除
-grep -v "^$new_line" /etc/hosts > "$temp_file"
+grep -v "^[[:space:]]*$new_line[[:space:]]*$" /etc/hosts > "$temp_file"
 
 # 将新的IP地址和对应的主机名插入到文件的第一行
 echo "$new_line" | cat - "$temp_file" > /etc/hosts
