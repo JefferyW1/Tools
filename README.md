@@ -3,7 +3,8 @@ debian 更改虚拟内存大小并开机启动
 ```
 sudo curl -o /root/Change_swap_size.sh https://raw.githubusercontent.com/JefferyW1/Tools/main/Change_swap_size.sh && sudo chmod +x /root/Change_swap_size.sh && ./Change_swap_size.sh
 ```
-# 配置iptable NAT（特别是源网络地址转换，SNAT），可以将用户的真实IP转换为VPN服务器的IP地址
+# masquerade
+配置iptable NAT（特别是源网络地址转换，SNAT），可以将用户的真实IP转换为VPN服务器的IP地址
 ```
 sudo curl -o /root/masquerade.sh https://raw.githubusercontent.com/JefferyW1/Tools/main/masquerade.sh && sudo chmod +x /root/masquerade.sh && ./masquerade.sh
 ```
