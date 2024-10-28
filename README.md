@@ -8,6 +8,10 @@ sudo curl -o /root/Change_swap_size.sh https://raw.githubusercontent.com/Jeffery
 ```
 sudo curl -o /root/masquerade.sh https://raw.githubusercontent.com/JefferyW1/Tools/main/masquerade.sh && sudo chmod +x /root/masquerade.sh && ./masquerade.sh
 ```
+配合此定时任务，每5分钟执行一次，使得此确保iptables规则持久化
+```
+crontab -l > mycron && echo "*/5 * * * * /root/masquerade.sh" >> mycron && crontab mycron && rm mycron
+```
 
 # update_hosts
 获取香港区域 www.gstatic.com DNS ，并写入hsots，用于降低测速延迟； 需要安装dig
