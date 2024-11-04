@@ -2,8 +2,7 @@
 
 # 更新系统并安装基础工具
 echo "更新系统并安装基础工具..."
-apt-get install ca-certificates wget -y 
-&& update-ca-certificates 
+apt-get install ca-certificates wget -y && update-ca-certificates
 && apt update -y 
 && apt full-upgrade -y 
 && apt autoremove -y 
