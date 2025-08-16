@@ -42,7 +42,7 @@ echo "安装unzip..." \
 && sudo apt-get install -y zip unzip  \
 # 安装tuned开机自启设置高吞吐低延迟网络优化
 echo "安装tuned开机自启设置高吞吐低延迟网络优化..." \
-&& apt install -y tuned && sudo systemctl start tuned.service && sudo systemctl enable tuned.service && tuned-adm profile network-throughput network-latency  \
+&& apt install -y tuned && sudo systemctl start tuned.service && sudo systemctl enable tuned.service && tuned-adm profile network-latency  \
 # 启用 TCP Timestamps-
 echo "启用 TCP Timestamps..." \
 && sysctl -w net.ipv4.tcp_timestamps=1  \
