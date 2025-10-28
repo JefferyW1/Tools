@@ -21,3 +21,7 @@ sudo apt-get install dnsutils  # dig安装命令 对于Debian/Ubuntu系统
 ```
 sudo curl -o /root/update_hosts.sh https://raw.githubusercontent.com/JefferyW1/Tools/main/update_hosts.sh && sudo chmod +x /root/update_hosts.sh && ./update_hosts.sh
 ```
+# 邮局端口联通性检测
+```
+sudo curl -o /root/smtp-port.sh https://raw.githubusercontent.com/JefferyW1/Tools/refs/heads/main/smtp-port.sh && sudo chmod +x /root/smtp-port.sh && ./smtp-port.sh
+```
