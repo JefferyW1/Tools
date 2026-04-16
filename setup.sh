@@ -29,8 +29,8 @@ echo "生成证书文件夹..." \
 && mkdir /root/mycert  \
 && chmod -R 755 /root/mycert  \
 # 安装xrayr
-echo "安装xrayr..." \
-&& wget -N https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/install.sh && bash install.sh  \
+# echo "安装xrayr..." \
+# && wget -N https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/install.sh && bash install.sh  \
 # 安装iptables
 echo "安装iptables..." \
 && apt-get install iptables  \
@@ -41,8 +41,8 @@ echo "安装证书脚本..." \
 echo "安装unzip..." \
 && sudo apt-get install -y zip unzip  \
 # 安装tuned开机自启设置高吞吐低延迟网络优化
-echo "安装tuned开机自启设置高吞吐低延迟网络优化..." \
-&& apt install -y tuned && sudo systemctl start tuned.service && sudo systemctl enable tuned.service && tuned-adm profile network-latency  \
+# echo "安装tuned开机自启设置高吞吐低延迟网络优化..." \
+# && apt install -y tuned && sudo systemctl start tuned.service && sudo systemctl enable tuned.service && tuned-adm profile network-latency  \
 # 启用 TCP Timestamps-
 echo "启用 TCP Timestamps..." \
 && sysctl -w net.ipv4.tcp_timestamps=1  \
