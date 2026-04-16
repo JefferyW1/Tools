@@ -8,7 +8,7 @@ sed -i '/tcp_tw_reuse/d' /etc/sysctl.conf && \
 
 echo "net.ipv4.tcp_keepalive_time = 60" >> /etc/sysctl.conf && \
 echo "net.ipv4.tcp_keepalive_intvl = 10" >> /etc/sysctl.conf && \
-echo "net.ipv4.tcp_keepalive_probes = 5" >> /etc/sysctl.conf && \
+echo "net.ipv4.tcp_keepalive_probes = 7" >> /etc/sysctl.conf && \
 echo "net.ipv4.tcp_fin_timeout = 15" >> /etc/sysctl.conf && \
 echo "net.ipv4.tcp_tw_reuse = 1" >> /etc/sysctl.conf && \
 
