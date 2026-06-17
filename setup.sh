@@ -13,6 +13,7 @@ apt-get install ca-certificates wget -y \
 && apt install wget -y \
 && apt install sudo \
 && sudo apt install curl \
+&& apt install haproxy -y \
 # 修改时区为上海
 echo "修改时区为上海..." \
 && sudo timedatectl set-timezone Asia/Shanghai \
@@ -53,5 +54,4 @@ echo "启用 TCP 优化(参考pfgo)..." \
 # echo "配置iptable NAT隐藏ip-\ 配置iptable NAT定时任务持久化..." \
 # && sudo curl -o /root/masquerade.sh https://raw.githubusercontent.com/JefferyW1/Tools/main/masquerade.sh && sudo chmod +x /root/masquerade.sh && ./masquerade.sh  \
 # && crontab -l > mycron && echo "*/5 * * * * /root/masquerade.sh" >> mycron && crontab mycron && rm mycron \
-&& apt install haproxy -y  \
 echo "全部执行完成"
